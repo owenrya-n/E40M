@@ -2,5 +2,5 @@
     "programmer": "AVR ISP",
     "port": "COM7",
     "board": "arduino:avr:uno",
-    "sketch": "blink.ino"
+    "sketch": "prelab.ino"
 }
