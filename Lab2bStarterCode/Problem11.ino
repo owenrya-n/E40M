@@ -14,10 +14,10 @@ void loop() {
   if (Serial.available() > 0) {
     user_input = Serial.read();
 
-    if (digitalRead(2)== HIGH) Serial.println("S1 High")else 
-    if (digitalRead(2)== LOW Serial.println("S1 low")
-    if (digitalRead(3)== HIGH) Serial.println("S2 High")else 
-    if (digitalRead(3)== LOW) Serial.println("S2 low")
+    if (digitalRead(2)== 1) Serial.println("S1 High")else 
+    if (digitalRead(2)== 0 Serial.println("S1 low")
+    if (digitalRead(3)== 1) Serial.println("S2 High")else 
+    if (digitalRead(3)== 0) Serial.println("S2 low")
   }
 }
 

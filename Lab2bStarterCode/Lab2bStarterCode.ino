@@ -14,7 +14,7 @@ void loop() {
   if (Serial.available() > 0) {
     user_input = Serial.read();
 
-    if (digitalRead(2) == HIGH) {
+    if (digitalRead(2) == 1) {
       Serial.println("Forward");
       digitalWrite(2, HIGH);
       digitalWrite(3, LOW);
