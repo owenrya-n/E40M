@@ -16,6 +16,7 @@ void loop() {
   int choice=random(0,10);
   bool sl = false;s
   Serial.println(sl);
+  Serial.println(choice);
   if(digitalRead(11)==LOW){//not at limit
     if(digitalRead(12)==LOW){//off & backwards
       digitalWrite(2,HIGH);
