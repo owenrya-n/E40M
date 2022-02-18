@@ -2,5 +2,5 @@
     "programmer": "AVR ISP",
     "port": "COM7",
     "board": "arduino:avr:uno",
-    "sketch": "Lab2bStarterCode.ino"
+    "sketch": "LAB_3A\\LAB_3A_v1.ino"
 }
