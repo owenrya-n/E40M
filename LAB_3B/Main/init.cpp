@@ -1,4 +1,5 @@
 #include "init.h"
+//basic initialization stuff
 #define echoPin1 A5
 #define echoPin2 1
 #define trigPin1 A4

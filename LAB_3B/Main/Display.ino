@@ -1,5 +1,6 @@
 #include "init.h"
 #include "rmplexer.h"
+//does some stuff with the LEDs
 #define echoPin1 A5
 #define echoPin2 1
 #define trigPin1 A4

@@ -1,5 +1,5 @@
 #include "rmplexer.H"
-
+//method composition of Display loop for the player controlled rows
 const byte ANODE_PINS[8] = {6,7,8,9,10,11,12,13};
 const byte CATHODE_PINS[8] = {A3,A2,A1,A0,5,4,3,2};
 long duration1;
