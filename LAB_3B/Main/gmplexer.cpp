@@ -22,3 +22,21 @@ int iteratey(int x, int y, int xp, int yp, int t){ //should return x and ypos wi
     y=y+t*yp;
     return y;
 }
+
+void draw_rebound(unsigned long freq, unsigned long timescale, int prev[2], int dy, int dx, int multiplier, int clock){
+    if (millis() - freq >= timescale)
+    {
+        freq = millis();
+        if (prev[0] >= 7 || prev[0] <= 0)
+        {
+            dx = -dx;
+        }
+        if (prev[1]>= 7 ||  prev[1] <= 0){
+            dy=-dy;
+        }
+        prev[0] = iteratex(prev[0], prev[1], dx, dy, multiplier);
+        prev[1] = iteratey(prev[0], prev[1], dx, dy, multiplier);
+    }
+
+    display(prev, clock);
+}
