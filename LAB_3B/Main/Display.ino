@@ -34,7 +34,7 @@ void loop()
     d2 = ping(echoPin1, trigPin1, 2);
     ramp(d1, 0, clock, settings);
     ramp(d2, 7, clock, settings);
-    if (millis() - freq >= timescale-10*timef)
+    if (millis() - freq >= timescale-50*timef)
     {
         freq = millis();
         if (prev[0] >= 7 || prev[0] <= 0)
