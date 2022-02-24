@@ -23,6 +23,8 @@ int dy = 1;
 void setup()
 {
     setPins();
+    delay(2000);
+
 }
 
 void loop()
@@ -32,21 +34,36 @@ void loop()
     d2 = ping(echoPin1, trigPin1, 2);
     ramp(d1, 0, clock, settings);
     ramp(d2, 7, clock, settings);
-   if (millis() - freq >= timescale)
+    if (millis() - freq >= timescale)
     {
         freq = millis();
         if (prev[0] >= 7 || prev[0] <= 0)
         {
             dx = -dx;
         }
-        if (prev[1]>= 7 ||  prev[1] <= 0){
-            dy=-dy;
+        if (prev[1] >= 7 || prev[1] <= 0)
+        {
+            dy = -dy;
         }
         prev[0] = iteratex(prev[0], prev[1], dx, dy, multiplier);
         prev[1] = iteratey(prev[0], prev[1], dx, dy, multiplier);
-        //draw_rebound1(freq, timescale, prev, dy, dx, multiplier, clock);
+        
     }
+
+    if (contact(prev[0], prev[1], d1, d2, settings) == 3)
+        {
+           blink(0,0,100);
+           dx=0;
+           dy=0;
+        }
+        if (contact(prev[0], prev[1], d1, d2, settings) == 4)
+        {
+            blink(0,0,100);
+            dx=0;
+            dy=0;
+        }
 
     display(prev, clock);
     delay(10);
+    //Serial.println(contact(prev[0], prev[1], d1, d2, settings));
 }

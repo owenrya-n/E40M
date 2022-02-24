@@ -13,14 +13,14 @@ int distance;
 void blink(int row, int column, int delay){ //turns on an LED for delay microseconds
         digitalWrite(CATHODE_PINS[row], LOW);
         digitalWrite(ANODE_PINS[column], LOW);
-        digitalWrite(CATHODE_PINS[row+1], LOW);
+        //digitalWrite(CATHODE_PINS[row+1], LOW);
         delayMicroseconds(delay);
         digitalWrite(CATHODE_PINS[row], HIGH);
         digitalWrite(ANODE_PINS[column], HIGH);
-        digitalWrite(CATHODE_PINS[row+1], HIGH);
+        //digitalWrite(CATHODE_PINS[row+1], HIGH);
 }
 
-ramp(int dst, int row, int delay, const byte stsp[7]){
+void ramp(int dst, int row, int delay, const byte stsp[7]){
     for(int i=0; i<7; i++){
         if(dst==stsp[i] || dst+1==stsp[i]){
             blink(i, row, delay);
